@@ -341,6 +341,31 @@
           }
         }
       }
+    },
+    "dog": {
+      "root": "libs/dog",
+      "sourceRoot": "libs/dog/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/dog/tsconfig.lib.json",
+              "libs/dog/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/dog/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/dog/jest.config.js",
+            "tsConfig": "libs/dog/tsconfig.spec.json"
+          }
+        }
+      }
     }
   },
   "cli": {
