@@ -391,6 +391,31 @@
           }
         }
       }
+    },
+    "asg": {
+      "root": "libs/asg",
+      "sourceRoot": "libs/asg/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/asg/tsconfig.lib.json",
+              "libs/asg/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/asg/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/asg/jest.config.js",
+            "tsConfig": "libs/asg/tsconfig.spec.json"
+          }
+        }
+      }
     }
   },
   "cli": {
