@@ -1,28 +1,41 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-
-import { BrowserRouter } from 'react-router-dom';
+import { dog } from '@nx-demo/dog';
+import { cat } from '@nx-demo/cat';
 
 import App from './app';
 
 describe('App', () => {
+
   it('should render successfully', () => {
+
     const { baseElement } = render(
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <App />
     );
 
     expect(baseElement).toBeTruthy();
+
   });
 
   it('should have pear as the title', () => {
+
     const { getByText } = render(
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <App />
     );
 
     expect(getByText('pear')).toBeTruthy();
+
   });
+
+  it('should display animals', () => {
+
+    const { getByText } = render(
+      <App />
+    );
+
+    expect(getByText(dog)).toBeTruthy();
+    expect(getByText(cat)).toBeTruthy();
+
+  });
+
 });
