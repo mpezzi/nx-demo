@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-demo/dog": ["libs/dog/src/index.ts"]
+      "@nx-demo/dog": ["libs/dog/src/index.ts"],
+      "@nx-demo/cat": ["libs/cat/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
