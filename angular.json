@@ -240,6 +240,107 @@
           }
         }
       }
+    },
+    "pear": {
+      "root": "apps/pear",
+      "sourceRoot": "apps/pear/src",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/web:build",
+          "options": {
+            "outputPath": "dist/apps/pear",
+            "index": "apps/pear/src/index.html",
+            "main": "apps/pear/src/main.tsx",
+            "polyfills": "apps/pear/src/polyfills.ts",
+            "tsConfig": "apps/pear/tsconfig.app.json",
+            "assets": ["apps/pear/src/favicon.ico", "apps/pear/src/assets"],
+            "styles": ["apps/pear/src/styles.scss"],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/babel"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/pear/src/environments/environment.ts",
+                  "with": "apps/pear/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "pear:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "pear:build:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/pear/tsconfig.app.json",
+              "apps/pear/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/pear/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/pear/jest.config.js",
+            "tsConfig": "apps/pear/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "pear-e2e": {
+      "root": "apps/pear-e2e",
+      "sourceRoot": "apps/pear-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/pear-e2e/cypress.json",
+            "tsConfig": "apps/pear-e2e/tsconfig.e2e.json",
+            "devServerTarget": "pear:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "pear:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/pear-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/pear-e2e/**"]
+          }
+        }
+      }
     }
   },
   "cli": {
@@ -252,6 +353,20 @@
     },
     "@nrwl/angular:library": {
       "unitTestRunner": "jest"
+    },
+    "@nrwl/react": {
+      "application": {
+        "style": "scss",
+        "linter": "tslint",
+        "babel": true
+      },
+      "component": {
+        "style": "scss"
+      },
+      "library": {
+        "style": "scss",
+        "linter": "tslint"
+      }
     }
   },
   "defaultProject": "apple"
