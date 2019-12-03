@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { dog } from '@nx-demo/dog';
+import { cat } from '@nx-demo/cat';
 
 @Component({
   selector: 'nx-demo-root',
@@ -7,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'apple';
+  animals = [dog, cat];
 }
