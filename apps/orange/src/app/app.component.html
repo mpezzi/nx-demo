@@ -1,11 +1,19 @@
-<h1>
-  {{ title }}
-</h1>
+<div class="container text-center">
 
-<ul>
-  <li *ngFor="let animal of animals">
-    {{ animal }}
-  </li>
-</ul>
+  <h1>
+    {{ title }} <small>angular 8.x</small>
+  </h1>
 
-<router-outlet></router-outlet>
+  <ul class="animals list-unstyled">
+    <li *ngFor="let animal of animals">
+      {{ animal }}
+    </li>
+  </ul>
+
+  <button class="btn btn-primary">
+    Done
+  </button>
+
+  <router-outlet></router-outlet>
+
+</div>
