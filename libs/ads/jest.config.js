@@ -1,9 +1,9 @@
 module.exports = {
-  name: 'asg',
+  name: 'ads',
   preset: '../../jest.config.js',
   transform: {
     '^.+\\.[tj]sx?$': 'ts-jest'
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'html'],
-  coverageDirectory: '../../coverage/libs/asg'
+  coverageDirectory: '../../coverage/libs/ads'
 };

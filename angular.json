@@ -392,9 +392,9 @@
         }
       }
     },
-    "asg": {
-      "root": "libs/asg",
-      "sourceRoot": "libs/asg/src",
+    "ads": {
+      "root": "libs/ads",
+      "sourceRoot": "libs/ads/src",
       "projectType": "library",
       "schematics": {},
       "architect": {
@@ -402,17 +402,17 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/asg/tsconfig.lib.json",
-              "libs/asg/tsconfig.spec.json"
+              "libs/ads/tsconfig.lib.json",
+              "libs/ads/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/asg/**"]
+            "exclude": ["**/node_modules/**", "!libs/ads/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/asg/jest.config.js",
-            "tsConfig": "libs/asg/tsconfig.spec.json"
+            "jestConfig": "libs/ads/jest.config.js",
+            "tsConfig": "libs/ads/tsconfig.spec.json"
           }
         }
       }
