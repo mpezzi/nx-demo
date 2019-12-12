@@ -19,17 +19,18 @@ export const App = () => {
         </div>
         <ul className="nav nav-pills flex-column">
           <li className="nav-item">
-            <a className="nav-link active" href="#">Active</a>
+            <a href="/apple" className="nav-link">
+              Apple
+            </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">Link</a>
+            <a href="/orange" className="nav-link">
+              Orange
+            </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">Link</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link disabled" href="#" aria-disabled="true">
-              Disabled
+            <a href="/pear" className="nav-link active">
+              Pear
             </a>
           </li>
         </ul>

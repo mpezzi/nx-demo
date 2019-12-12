@@ -42,6 +42,8 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
+              "baseHref": "/apple/",
+              "deployUrl": "/apple/",
               "budgets": [
                 {
                   "type": "initial",
@@ -162,6 +164,8 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
+              "baseHref": "/orange/",
+              "deployUrl": "/orange/",
               "budgets": [
                 {
                   "type": "initial",
@@ -275,6 +279,8 @@
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
+              "baseHref": "/pear/",
+              "deployUrl": "/pear/",
               "budgets": [
                 {
                   "type": "initial",
@@ -413,6 +419,60 @@
           "options": {
             "jestConfig": "libs/ads/jest.config.js",
             "tsConfig": "libs/ads/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "dashboard": {
+      "root": "servers/dashboard",
+      "sourceRoot": "servers/dashboard/src",
+      "projectType": "application",
+      "prefix": "dashboard",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/servers/dashboard",
+            "main": "servers/dashboard/src/main.ts",
+            "tsConfig": "servers/dashboard/tsconfig.app.json",
+            "assets": ["servers/dashboard/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "servers/dashboard/src/environments/environment.ts",
+                  "with": "servers/dashboard/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "dashboard:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "servers/dashboard/tsconfig.app.json",
+              "servers/dashboard/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!servers/dashboard/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "servers/dashboard/jest.config.js",
+            "tsConfig": "servers/dashboard/tsconfig.spec.json"
           }
         }
       }

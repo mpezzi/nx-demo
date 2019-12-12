@@ -5,7 +5,7 @@ export class AdsLayoutAside extends React.Component {
     return (
       <div className="ads-layout-aside">
         <h1 className="ads-layout-aside__logo">
-          Acquia
+          nx-demo
         </h1>
         {this.props.children}
       </div>
