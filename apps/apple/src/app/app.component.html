@@ -1,19 +1,50 @@
-<div class="container text-center">
+<ads-layout>
 
-  <h1>
-    {{ title }} <small>angular 8.x</small>
-  </h1>
+  <ads-layout-aside>
 
-  <ul class="animals list-unstyled">
-    <li *ngFor="let animal of animals">
-      {{ animal }}
-    </li>
-  </ul>
+    <div class="text-center">
 
-  <button class="btn btn-primary">
-    Done
-  </button>
+      <h2>
+        {{ title }}
+      </h2>
 
-  <router-outlet></router-outlet>
+      <p class="lead">
+        Angular 8.x
+      </p>
 
-</div>
+    </div>
+
+    <ul class="nav nav-pills flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+
+  </ads-layout-aside>
+
+  <ads-layout-content>
+
+    <ul class="animals list-unstyled">
+      <li *ngFor="let animal of animals">
+        {{ animal }}
+      </li>
+    </ul>
+
+    <button class="btn btn-primary">
+      Done
+    </button>
+
+    <router-outlet></router-outlet>
+
+  </ads-layout-content>
+
+</ads-layout>

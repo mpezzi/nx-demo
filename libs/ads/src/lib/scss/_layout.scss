@@ -1,0 +1,62 @@
+$ads-layout-aside-width: 300px;
+$ads-layout-aside-background-color: #2C3649;
+$ads-layout-aside-text-color: #ffffff;
+$ads-layout-padding: 20px;
+
+.ads-layout {
+
+  & {
+    position: relative;
+  }
+
+}
+
+.ads-layout-aside {
+
+  & {
+    background-color: $ads-layout-aside-background-color;
+    color: $ads-layout-aside-text-color;
+    padding: $ads-layout-padding;
+  }
+
+  &__logo {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+}
+
+.ads-layout-content {
+
+  & {
+    position: relative;
+    padding: $ads-layout-padding;
+  }
+
+}
+
+@include media-breakpoint-up(sm) {
+
+  .ads-layout {
+
+    & {
+      position: relative;
+      padding-left: $ads-layout-aside-width;
+    }
+
+  }
+
+  .ads-layout-aside {
+
+    & {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: $ads-layout-aside-width;
+    }
+
+  }
+
+}
