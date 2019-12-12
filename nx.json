@@ -8,41 +8,44 @@
     "nx.json": "*"
   },
   "projects": {
-    "apple-e2e": {
-      "tags": []
+    "dashboard": {
+      "tags": [],
+      "implicitDependencies": ["apple", "orange", "pear"]
     },
     "apple": {
-      "tags": []
+      "tags": ["app"]
     },
-    "orange-e2e": {
-      "tags": []
+    "apple-e2e": {
+      "tags": ["app-e2e"]
     },
     "orange": {
-      "tags": []
+      "tags": ["app"]
+    },
+    "orange-e2e": {
+      "tags": ["app-e2e"]
     },
     "pear": {
-      "tags": []
+      "tags": ["app"]
     },
     "pear-e2e": {
-      "tags": []
-    },
-    "dog": {
-      "tags": []
-    },
-    "cat": {
-      "tags": []
+      "tags": ["app-e2e"]
     },
     "ads": {
-      "tags": []
-    },
-    "dashboard": {
-      "tags": []
+      "tags": ["lib", "ads"]
     },
     "ads-angular": {
-      "tags": []
+      "tags": ["lib", "ads"],
+      "implicitDependencies": ["ads"]
     },
     "ads-react": {
-      "tags": []
+      "tags": ["lib", "ads"],
+      "implicitDependencies": ["ads"]
+    },
+    "dog": {
+      "tags": ["lib"]
+    },
+    "cat": {
+      "tags": ["lib"]
     }
   }
 }
