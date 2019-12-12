@@ -22,7 +22,7 @@
             "tsConfig": "apps/apple/tsconfig.app.json",
             "aot": false,
             "assets": ["apps/apple/src/favicon.ico", "apps/apple/src/assets"],
-            "styles": ["apps/apple/src/styles.scss"],
+            "styles": ["libs/ads/src/lib/scss/ads.scss", "apps/apple/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -144,7 +144,7 @@
             "tsConfig": "apps/orange/tsconfig.app.json",
             "aot": false,
             "assets": ["apps/orange/src/favicon.ico", "apps/orange/src/assets"],
-            "styles": ["apps/orange/src/styles.scss"],
+            "styles": ["libs/ads/src/lib/scss/ads.scss", "apps/orange/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -260,7 +260,7 @@
             "polyfills": "apps/pear/src/polyfills.ts",
             "tsConfig": "apps/pear/tsconfig.app.json",
             "assets": ["apps/pear/src/favicon.ico", "apps/pear/src/assets"],
-            "styles": ["apps/pear/src/styles.scss"],
+            "styles": ["libs/ads/src/lib/scss/ads.scss", "apps/pear/src/styles.scss"],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/babel"
           },
@@ -473,6 +473,62 @@
           "options": {
             "jestConfig": "servers/dashboard/jest.config.js",
             "tsConfig": "servers/dashboard/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "ads-angular": {
+      "projectType": "library",
+      "root": "libs/ads-angular",
+      "sourceRoot": "libs/ads-angular/src",
+      "prefix": "nx-demo",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ads-angular/tsconfig.lib.json",
+              "libs/ads-angular/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ads-angular/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ads-angular/jest.config.js",
+            "tsConfig": "libs/ads-angular/tsconfig.spec.json",
+            "setupFile": "libs/ads-angular/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ads-react": {
+      "root": "libs/ads-react",
+      "sourceRoot": "libs/ads-react/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ads-react/tsconfig.lib.json",
+              "libs/ads-react/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ads-react/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ads-react/jest.config.js",
+            "tsConfig": "libs/ads-react/tsconfig.spec.json"
           }
         }
       }

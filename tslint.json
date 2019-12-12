@@ -53,10 +53,7 @@
     "nx-enforce-module-boundaries": [
       true,
       {
-        "allow": [
-          "@nx-demo/ads/angular",
-          "@nx-demo/ads/react"
-        ],
+        "allow": [],
         "depConstraints": [
           {
             "sourceTag": "*",

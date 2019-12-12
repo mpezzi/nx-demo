@@ -37,6 +37,12 @@
     },
     "dashboard": {
       "tags": []
+    },
+    "ads-angular": {
+      "tags": []
+    },
+    "ads-react": {
+      "tags": []
     }
   }
 }

@@ -3,7 +3,7 @@ import { AppComponent } from './app.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { dog } from '@nx-demo/dog';
 import { cat } from '@nx-demo/cat';
-import { AdsLayoutModule } from '@nx-demo/ads/angular';
+import { AdsLayoutModule } from '@nx-demo/ads-angular';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {

@@ -16,8 +16,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-demo/ads/angular": ["libs/ads/src/lib/angular/index.ts"],
-      "@nx-demo/ads/react": ["libs/ads/src/lib/react/index.ts"],
+      "@nx-demo/ads": ["libs/ads/src/index.ts"],
+      "@nx-demo/ads-angular": ["libs/ads-angular/src/index.ts"],
+      "@nx-demo/ads-react": ["libs/ads-react/src/index.ts"],
       "@nx-demo/dog": ["libs/dog/src/index.ts"],
       "@nx-demo/cat": ["libs/cat/src/index.ts"]
     }

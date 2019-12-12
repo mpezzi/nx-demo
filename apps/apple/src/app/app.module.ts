@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
-import { AdsLayoutModule } from '@nx-demo/ads/angular';
+import { AdsLayoutModule } from '@nx-demo/ads-angular';
 
 @NgModule({
   declarations: [AppComponent],

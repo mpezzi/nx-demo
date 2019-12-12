@@ -1,7 +1,7 @@
 import React from 'react';
 import { dog } from '@nx-demo/dog';
 import { cat } from '@nx-demo/cat';
-import { AdsLayout, AdsLayoutAside, AdsLayoutContent } from '@nx-demo/ads/react';
+import { AdsLayout, AdsLayoutAside, AdsLayoutContent } from '@nx-demo/ads-react';
 
 import './app.scss';
 
@@ -14,7 +14,7 @@ export const App = () => {
             pear
           </h2>
           <p className="lead">
-            React 16.x
+            <em>React 16.x</em>
           </p>
         </div>
         <ul className="nav nav-pills flex-column">
