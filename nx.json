@@ -9,8 +9,7 @@
   },
   "projects": {
     "dashboard": {
-      "tags": [],
-      "implicitDependencies": ["apple", "orange", "pear"]
+      "tags": ["server"]
     },
     "apple": {
       "tags": ["app"]
