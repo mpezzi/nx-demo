@@ -1,4 +1,5 @@
 import { Post } from '../interfaces';
+
 import { user } from './user.mock';
 
 export const post: Post = {

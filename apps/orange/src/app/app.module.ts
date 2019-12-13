@@ -1,9 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AdsLayoutModule } from '@nx-demo/ads-angular';
+
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],

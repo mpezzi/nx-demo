@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { dog } from '@nx-demo/dog';
 import { cat } from '@nx-demo/cat';
+import { dog } from '@nx-demo/dog';
 
 @Component({
   selector: 'nx-demo-root',

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { shareReplay, pluck } from 'rxjs/operators';
 import { Apollo, QueryRef } from 'apollo-angular';
-import { query } from './post-list-container.component.query';
 import { Observable } from 'apollo-link';
+import { pluck, shareReplay } from 'rxjs/operators';
+
 import { Post } from '../../interfaces';
+
+import { query } from './post-list-container.component.query';
 
 @Component({
   selector: 'nx-demo-post-list-container',

@@ -1,7 +1,7 @@
-import React from 'react';
-import { dog } from '@nx-demo/dog';
-import { cat } from '@nx-demo/cat';
 import { AdsLayout, AdsLayoutAside, AdsLayoutContent } from '@nx-demo/ads-react';
+import { cat } from '@nx-demo/cat';
+import { dog } from '@nx-demo/dog';
+import React from 'react';
 
 import './app.scss';
 

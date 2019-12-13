@@ -1,7 +1,7 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import { dog } from '@nx-demo/dog';
 import { cat } from '@nx-demo/cat';
+import { dog } from '@nx-demo/dog';
+import { render } from '@testing-library/react';
+import React from 'react';
 
 import App from './app';
 

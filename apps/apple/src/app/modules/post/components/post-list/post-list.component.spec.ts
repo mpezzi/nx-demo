@@ -1,8 +1,9 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+
+import { post } from '../../mocks';
 
 import { PostListComponent } from './post-list.component';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { post } from '../../mocks';
 
 describe('PostListComponent', () => {
   let component: PostListComponent;

@@ -1,8 +1,9 @@
 import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
 import { RouterTestingModule } from '@angular/router/testing';
-import { dog } from '@nx-demo/dog';
 import { AdsLayoutModule } from '@nx-demo/ads-angular';
+import { dog } from '@nx-demo/dog';
+
+import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {

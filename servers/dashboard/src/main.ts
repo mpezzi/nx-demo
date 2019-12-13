@@ -1,6 +1,7 @@
-import * as express from 'express';
 import { ApolloServer } from 'apollo-server-express';
-import { schema as typeDefs, resolvers } from './graphql';
+import * as express from 'express';
+
+import { resolvers, schema as typeDefs } from './graphql';
 
 const app = express();
 const apolloServer = new ApolloServer({ typeDefs, resolvers });

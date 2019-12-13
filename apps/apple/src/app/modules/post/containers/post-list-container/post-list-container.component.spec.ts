@@ -1,13 +1,14 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import {
+  ApolloTestingController,
+  ApolloTestingModule
+} from 'apollo-angular/testing';
+
+import { post } from '../../mocks';
 
 import { PostListContainerComponent } from './post-list-container.component';
-import {
-  ApolloTestingModule,
-  ApolloTestingController
-} from 'apollo-angular/testing';
 import { query } from './post-list-container.component.query';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { post } from '../../mocks';
 
 describe('PostListContainerComponent', () => {
 

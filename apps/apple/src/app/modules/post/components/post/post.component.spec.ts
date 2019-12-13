@@ -1,7 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+
+import { post } from '../../mocks';
 
 import { PostComponent } from './post.component';
-import { post } from '../../mocks';
 
 describe('PostComponent', () => {
   let component: PostComponent;

@@ -1,9 +1,9 @@
-import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
-import { ApolloModule, APOLLO_OPTIONS } from "apollo-angular";
-import { HttpLinkModule, HttpLink } from "apollo-angular-link-http";
-import { InMemoryCache } from "apollo-cache-inmemory";
+import { NgModule } from "@angular/core";
 import { BrowserModule } from '@angular/platform-browser';
+import { APOLLO_OPTIONS, ApolloModule } from "apollo-angular";
+import { HttpLink, HttpLinkModule } from "apollo-angular-link-http";
+import { InMemoryCache } from "apollo-cache-inmemory";
 
 @NgModule({
   imports: [BrowserModule, HttpClientModule, ApolloModule, HttpLinkModule],

@@ -1,4 +1,5 @@
-import { async, TestBed } from '@angular/core/testing';
+import { TestBed, async } from '@angular/core/testing';
+
 import { AdsModule } from './ads.module';
 
 describe('AdsAngularModule', () => {

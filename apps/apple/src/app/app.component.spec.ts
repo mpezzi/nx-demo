@@ -1,10 +1,11 @@
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { RouterTestingModule } from '@angular/router/testing';
-import { dog } from '@nx-demo/dog';
-import { cat } from '@nx-demo/cat';
-import { AdsLayoutModule } from '@nx-demo/ads-angular';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { TestBed, async } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AdsLayoutModule } from '@nx-demo/ads-angular';
+import { cat } from '@nx-demo/cat';
+import { dog } from '@nx-demo/dog';
+
+import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
