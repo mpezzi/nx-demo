@@ -1,23 +1,23 @@
 import * as express from 'express';
+import { ApolloServer } from 'apollo-server-express';
+import { schema as typeDefs, resolvers } from './graphql';
 
 const app = express();
-const apps = ['apple', 'orange', 'pear'];
+const apolloServer = new ApolloServer({ typeDefs, resolvers });
 
-apps.forEach(a => {
+app.get('/', (req, res) => {
+  res.redirect('/apple');
+});
+
+['apple', 'orange', 'pear'].forEach(a => {
   app.use(`/${a}`, express.static(`./dist/apps/${a}`));
 });
 
-app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to dashboard!' });
+apolloServer.applyMiddleware({ app });
+
+const port = process.env.port || 4000;
+const expressServer = app.listen(port, () => {
+  console.log(`Listening at http://localhost:${port}/`);
 });
 
-app.get('/', (req, res) => {
-  res.redirect('/apple/');
-});
-
-const port = process.env.port || 3333;
-const server = app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}/api`);
-});
-
-server.on('error', console.error);
+expressServer.on('error', console.error);

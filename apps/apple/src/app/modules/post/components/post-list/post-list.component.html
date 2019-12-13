@@ -1,0 +1,25 @@
+<div style="padding-top: 50px;">
+
+  <h2>
+    Posts
+  </h2>
+
+  <ng-container *ngIf="loading; else loaded">
+
+    <p>
+      Loading ...
+    </p>
+
+  </ng-container>
+
+  <ng-template #loaded>
+
+    <ul>
+      <li *ngFor="let post of posts; trackBy: trackByPostId">
+        <strong>{{ post.title }}</strong> by <em>{{ post.user.name }}</em>
+      </li>
+    </ul>
+
+  </ng-template>
+
+</div>

@@ -1,18 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { AdsLayoutModule } from '@nx-demo/ads-angular';
 
+import { ApolloClientModule } from './modules/apollo';
+import { PostModule } from './modules/post';
+import { routes } from './routes';
+import { AppComponent } from './app.component';
+
 @NgModule({
-  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
+    RouterModule.forRoot(routes, { initialNavigation: 'enabled' }),
+    ApolloClientModule,
+    PostModule,
     AdsLayoutModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -4,11 +4,13 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { dog } from '@nx-demo/dog';
 import { cat } from '@nx-demo/cat';
 import { AdsLayoutModule } from '@nx-demo/ads-angular';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, AdsLayoutModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
       declarations: [AppComponent]
     }).compileComponents();
   }));
