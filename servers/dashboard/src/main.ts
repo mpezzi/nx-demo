@@ -1,5 +1,6 @@
 import { ApolloServer } from 'apollo-server-express';
 import * as express from 'express';
+import * as proxy from 'express-http-proxy';
 
 import { resolvers, schema as typeDefs } from './graphql';
 
@@ -9,6 +10,8 @@ const apolloServer = new ApolloServer({ typeDefs, resolvers });
 app.get('/', (req, res) => {
   res.redirect('/apple');
 });
+
+app.use('/example', proxy('http://example.com/'));
 
 ['apple', 'orange', 'pear'].forEach(a => {
   app.use(`/${a}`, express.static(`./dist/apps/${a}`));
