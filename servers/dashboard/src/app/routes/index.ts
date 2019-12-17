@@ -1,13 +1,13 @@
 import { RouteApplier, Routes } from '../interfaces';
 
-import * as graphqlRoute from './graphql.route';
-import * as proxyRoute from './proxy.route';
-import * as staticRoute from './static.route';
+import * as graphqlRoutes from './graphql.route';
+import * as proxyRoutes from './proxy.route';
+import * as staticRoutes from './static.route';
 
 export const routes: Routes = [
-  graphqlRoute,
-  proxyRoute,
-  staticRoute,
+  graphqlRoutes,
+  proxyRoutes,
+  staticRoutes,
 ];
 
 export const applyRoutes: RouteApplier = (app) => {
