@@ -1,8 +1,8 @@
 import { RouteApplier, Routes } from '../interfaces';
 
-import * as graphqlRoutes from './graphql.route';
-import * as proxyRoutes from './proxy.route';
-import * as staticRoutes from './static.route';
+import * as graphqlRoutes from './graphql.routes';
+import * as proxyRoutes from './proxy.routes';
+import * as staticRoutes from './static.routes';
 
 export const routes: Routes = [
   graphqlRoutes,
