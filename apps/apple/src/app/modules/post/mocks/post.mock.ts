@@ -1,9 +1,9 @@
-import { Post } from '../interfaces';
+import { Post } from '@nx-demo/interface';
 
 import { user } from './user.mock';
 
 export const post: Post = {
-  id: 1,
+  id: 'post-id-1',
   title: 'Post 1',
   user,
 };

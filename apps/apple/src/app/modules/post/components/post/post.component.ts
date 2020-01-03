@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
-import { Post } from '../../interfaces';
+import { Post } from '@nx-demo/interface';
 
 @Component({
   selector: 'nx-demo-post',

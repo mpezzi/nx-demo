@@ -3,7 +3,7 @@ import { Apollo, QueryRef } from 'apollo-angular';
 import { Observable } from 'apollo-link';
 import { pluck, shareReplay } from 'rxjs/operators';
 
-import { Post } from '../../interfaces';
+import { Post } from '@nx-demo/interface';
 
 import { query } from './post-list-container.component.query';
 

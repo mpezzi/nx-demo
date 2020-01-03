@@ -21,10 +21,7 @@
             "polyfills": "apps/apple/src/polyfills.ts",
             "tsConfig": "apps/apple/tsconfig.app.json",
             "aot": false,
-            "assets": [
-              "apps/apple/src/favicon.ico",
-              "apps/apple/src/assets"
-            ],
+            "assets": ["apps/apple/src/favicon.ico", "apps/apple/src/assets"],
             "styles": [
               "libs/ads/src/lib/scss/ads.scss",
               "apps/apple/src/styles.scss"
@@ -89,10 +86,7 @@
               "apps/apple/tsconfig.app.json",
               "apps/apple/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/apple/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/apple/**"]
           }
         },
         "test": {
@@ -126,13 +120,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/apple-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/apple-e2e/**"
-            ]
+            "tsConfig": ["apps/apple-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/apple-e2e/**"]
           }
         }
       }
@@ -157,10 +146,7 @@
             "polyfills": "apps/orange/src/polyfills.ts",
             "tsConfig": "apps/orange/tsconfig.app.json",
             "aot": false,
-            "assets": [
-              "apps/orange/src/favicon.ico",
-              "apps/orange/src/assets"
-            ],
+            "assets": ["apps/orange/src/favicon.ico", "apps/orange/src/assets"],
             "styles": [
               "libs/ads/src/lib/scss/ads.scss",
               "apps/orange/src/styles.scss"
@@ -225,10 +211,7 @@
               "apps/orange/tsconfig.app.json",
               "apps/orange/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/orange/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/orange/**"]
           }
         },
         "test": {
@@ -262,13 +245,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/orange-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/orange-e2e/**"
-            ]
+            "tsConfig": ["apps/orange-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/orange-e2e/**"]
           }
         }
       }
@@ -287,10 +265,7 @@
             "main": "apps/pear/src/main.tsx",
             "polyfills": "apps/pear/src/polyfills.ts",
             "tsConfig": "apps/pear/tsconfig.app.json",
-            "assets": [
-              "apps/pear/src/favicon.ico",
-              "apps/pear/src/assets"
-            ],
+            "assets": ["apps/pear/src/favicon.ico", "apps/pear/src/assets"],
             "styles": [
               "libs/ads/src/lib/scss/ads.scss",
               "apps/pear/src/styles.scss"
@@ -343,10 +318,7 @@
               "apps/pear/tsconfig.app.json",
               "apps/pear/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/pear/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/pear/**"]
           }
         },
         "test": {
@@ -379,13 +351,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/pear-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/pear-e2e/**"
-            ]
+            "tsConfig": ["apps/pear-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/pear-e2e/**"]
           }
         }
       }
@@ -403,10 +370,7 @@
               "libs/dog/tsconfig.lib.json",
               "libs/dog/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/dog/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/dog/**"]
           }
         },
         "test": {
@@ -431,10 +395,7 @@
               "libs/cat/tsconfig.lib.json",
               "libs/cat/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/cat/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/cat/**"]
           }
         },
         "test": {
@@ -459,10 +420,7 @@
               "libs/ads/tsconfig.lib.json",
               "libs/ads/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ads/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/ads/**"]
           }
         },
         "test": {
@@ -470,65 +428,6 @@
           "options": {
             "jestConfig": "libs/ads/jest.config.js",
             "tsConfig": "libs/ads/tsconfig.spec.json"
-          }
-        }
-      }
-    },
-    "dashboard": {
-      "root": "servers/dashboard",
-      "sourceRoot": "servers/dashboard/src",
-      "projectType": "application",
-      "prefix": "dashboard",
-      "schematics": {},
-      "architect": {
-        "build": {
-          "builder": "@nrwl/node:build",
-          "options": {
-            "outputPath": "dist/servers/dashboard",
-            "main": "servers/dashboard/src/main.ts",
-            "tsConfig": "servers/dashboard/tsconfig.app.json",
-            "assets": [
-              "servers/dashboard/src/assets"
-            ]
-          },
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "extractLicenses": true,
-              "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "servers/dashboard/src/environments/environment.ts",
-                  "with": "servers/dashboard/src/environments/environment.prod.ts"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "dashboard:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "servers/dashboard/tsconfig.app.json",
-              "servers/dashboard/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!servers/dashboard/**"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "servers/dashboard/jest.config.js",
-            "tsConfig": "servers/dashboard/tsconfig.spec.json"
           }
         }
       }
@@ -546,10 +445,7 @@
               "libs/ads-angular/tsconfig.lib.json",
               "libs/ads-angular/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ads-angular/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/ads-angular/**"]
           }
         },
         "test": {
@@ -580,10 +476,7 @@
               "libs/ads-react/tsconfig.lib.json",
               "libs/ads-react/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ads-react/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/ads-react/**"]
           }
         },
         "test": {
@@ -608,9 +501,7 @@
             "outputPath": "dist/servers/app",
             "main": "servers/app/src/main.ts",
             "tsConfig": "servers/app/tsconfig.app.json",
-            "assets": [
-              "servers/app/src/assets"
-            ]
+            "assets": ["servers/app/src/assets"]
           },
           "configurations": {
             "production": {
@@ -639,10 +530,7 @@
               "servers/app/tsconfig.app.json",
               "servers/app/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!servers/app/**"
-            ]
+            "exclude": ["**/node_modules/**", "!servers/app/**"]
           }
         },
         "test": {
@@ -650,6 +538,31 @@
           "options": {
             "jestConfig": "servers/app/jest.config.js",
             "tsConfig": "servers/app/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "interface": {
+      "root": "libs/interface",
+      "sourceRoot": "libs/interface/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/interface/tsconfig.lib.json",
+              "libs/interface/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/interface/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/interface/jest.config.js",
+            "tsConfig": "libs/interface/tsconfig.spec.json"
           }
         }
       }

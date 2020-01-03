@@ -8,77 +8,46 @@
     "nx.json": "*"
   },
   "projects": {
-    "dashboard": {
-      "tags": [
-        "server"
-      ]
+    "app": {
+      "tags": ["server"]
     },
     "apple": {
-      "tags": [
-        "app"
-      ]
+      "tags": ["app"]
     },
     "apple-e2e": {
-      "tags": [
-        "app-e2e"
-      ]
+      "tags": ["app-e2e"]
     },
     "orange": {
-      "tags": [
-        "app"
-      ]
+      "tags": ["app"]
     },
     "orange-e2e": {
-      "tags": [
-        "app-e2e"
-      ]
+      "tags": ["app-e2e"]
     },
     "pear": {
-      "tags": [
-        "app"
-      ]
+      "tags": ["app"]
     },
     "pear-e2e": {
-      "tags": [
-        "app-e2e"
-      ]
+      "tags": ["app-e2e"]
     },
     "ads": {
-      "tags": [
-        "lib",
-        "ads"
-      ]
+      "tags": ["lib", "ads"]
     },
     "ads-angular": {
-      "tags": [
-        "lib",
-        "ads"
-      ],
-      "implicitDependencies": [
-        "ads"
-      ]
+      "tags": ["lib", "ads"],
+      "implicitDependencies": ["ads"]
     },
     "ads-react": {
-      "tags": [
-        "lib",
-        "ads"
-      ],
-      "implicitDependencies": [
-        "ads"
-      ]
+      "tags": ["lib", "ads"],
+      "implicitDependencies": ["ads"]
+    },
+    "interface": {
+      "tags": ["lib", "interface"]
     },
     "dog": {
-      "tags": [
-        "lib"
-      ]
+      "tags": ["lib"]
     },
     "cat": {
-      "tags": [
-        "lib"
-      ]
-    },
-    "app": {
-      "tags": []
+      "tags": ["lib"]
     }
   }
 }

@@ -1,11 +1,36 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import * as express from 'express';
+import { join } from 'path';
 
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { GraphQLModule } from './modules/graphql';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    GraphQLModule,
+  ],
+  controllers: [
+    AppController,
+  ],
 })
-export class AppModule {}
+export class AppModule implements NestModule {
+
+  /**
+   * Apply middleware.
+   */
+  public configure(consumer: MiddlewareConsumer): void {
+
+    const spas = [
+      'apple',
+      'orange',
+      'pear',
+    ];
+
+    spas.forEach(a => consumer
+      .apply(express.static(join(process.cwd(), `dist/apps/${a}`)))
+      .forRoutes(a)
+    );
+
+  }
+
+}

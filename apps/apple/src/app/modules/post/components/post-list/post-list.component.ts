@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
-import { Post } from '../../interfaces';
+import { Post } from '@nx-demo/interface';
 
 @Component({
   selector: 'nx-demo-post-list',
@@ -23,7 +23,7 @@ export class PostListComponent {
   /**
    * Track by post id.
    */
-  public trackByPostId(_: number, post: Post): number {
+  public trackByPostId(_: number, post: Post): string {
 
     return post.id;
 

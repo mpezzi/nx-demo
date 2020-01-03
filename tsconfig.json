@@ -20,7 +20,8 @@
       "@nx-demo/ads-angular": ["libs/ads-angular/src/index.ts"],
       "@nx-demo/ads-react": ["libs/ads-react/src/index.ts"],
       "@nx-demo/dog": ["libs/dog/src/index.ts"],
-      "@nx-demo/cat": ["libs/cat/src/index.ts"]
+      "@nx-demo/cat": ["libs/cat/src/index.ts"],
+      "@nx-demo/interface": ["libs/interface/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
