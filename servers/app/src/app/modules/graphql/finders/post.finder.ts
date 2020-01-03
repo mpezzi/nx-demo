@@ -1,6 +1,7 @@
-import { Inject, Injectable } from "@nestjs/common";
-
+import { Injectable } from "@nestjs/common";
 import { Post } from '@nx-demo/interface';
+
+import { JsonPlaceholderClient } from '../clients';
 
 @Injectable()
 export class PostFinder {
@@ -9,21 +10,25 @@ export class PostFinder {
    * Constructor.
    */
   public constructor(
-    @Inject('JsonPlaceholderClient') private readonly jsonPlaceholderClient,
+    private readonly client: JsonPlaceholderClient,
   ) { }
 
   /**
    * Get posts.
    */
   public async getPosts(): Promise<Post[]> {
-    return await this.jsonPlaceholderClient.get(`/posts`).then(r => r.data);
+
+    return await this.client.get(`/posts`);
+
   }
 
   /**
    * Get post by id.
    */
   public async getPostById(postId: string): Promise<Post> {
-    return await this.jsonPlaceholderClient.get(`/posts/${postId}`).then(r => r.data);
+
+    return await this.client.get(`/posts/${postId}`);
+
   }
 
 }

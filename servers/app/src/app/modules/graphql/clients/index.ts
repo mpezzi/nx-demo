@@ -1,7 +1,7 @@
-import { JsonPlaceholderClientProvider } from './jsonplaceholder.client';
+import { JsonPlaceholderClient } from './jsonplaceholder.client';
 
 export const clients: any [] = [
-  JsonPlaceholderClientProvider,
+  JsonPlaceholderClient,
 ];
 
 export * from './jsonplaceholder.client';

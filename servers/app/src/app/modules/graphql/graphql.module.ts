@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { HttpModule, Module } from '@nestjs/common';
 import { GraphQLModule as NestGraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 
@@ -8,6 +8,7 @@ import { resolvers } from './resolvers';
 
 @Module({
   imports: [
+    HttpModule,
     NestGraphQLModule.forRoot({
       include: [GraphQLModule],
       typePaths: ['./**/graphql.graphql'],
@@ -16,7 +17,7 @@ import { resolvers } from './resolvers';
       },
       debug: true,
       playground: true
-    })
+    }),
   ],
   providers: [...clients, ...finders, ...resolvers]
 })

@@ -1,6 +1,7 @@
-import { Inject, Injectable } from "@nestjs/common";
-
+import { Injectable } from "@nestjs/common";
 import { User } from '@nx-demo/interface';
+
+import { JsonPlaceholderClient } from '../clients';
 
 @Injectable()
 export class UserFinder {
@@ -9,21 +10,25 @@ export class UserFinder {
    * Constructor.
    */
   public constructor(
-    @Inject('JsonPlaceholderClient') private readonly jsonPlaceholderClient,
+    private readonly client: JsonPlaceholderClient,
   ) { }
 
   /**
    * Get users.
    */
   public async getUsers(): Promise<User[]> {
-    return await this.jsonPlaceholderClient.get(`/users`).then(r => r.data);
+
+    return await this.client.get(`/users`);
+
   }
 
   /**
    * Get user by id.
    */
   public async getUserById(userId: string): Promise<User> {
-    return await this.jsonPlaceholderClient.get(`/users/${userId}`).then(r => r.data);
+
+    return await this.client.get(`/users/${userId}`);
+
   }
 
 }

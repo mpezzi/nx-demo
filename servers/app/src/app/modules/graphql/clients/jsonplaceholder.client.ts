@@ -1,18 +1,28 @@
-import axios, { AxiosInstance } from 'axios';
-import { setupCache } from 'axios-cache-adapter';
+import { HttpService, Injectable } from "@nestjs/common";
+import { AxiosRequestConfig } from 'axios';
 
-export const JsonPlaceholderClientProvider = {
-  provide: 'JsonPlaceholderClient',
-  useFactory: (): AxiosInstance => {
+@Injectable()
+export class JsonPlaceholderClient {
 
-    const cache = setupCache({
-      maxAge: 10 * 60000,
-    });
+  /**
+   * Holds url.
+   */
+  public url = 'https://jsonplaceholder.typicode.com';
 
-    return axios.create({
-      baseURL: `https://jsonplaceholder.typicode.com`,
-      adapter: cache.adapter,
-    });
+  /**
+   * Constructor.
+   */
+  public constructor(
+    private readonly http: HttpService,
+  ) { }
 
-  },
-};
+  /**
+   * Perform a GET request.
+   */
+  public get(url: string, config?: AxiosRequestConfig): Promise<any> {
+
+    return this.http.get(this.url + url, config).toPromise().then(r => r.data);
+
+  }
+
+}
