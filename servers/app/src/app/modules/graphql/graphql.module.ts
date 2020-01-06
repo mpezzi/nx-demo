@@ -13,7 +13,8 @@ import { resolvers } from './resolvers';
       include: [GraphQLModule],
       typePaths: ['./**/*.graphql'],
       definitions: {
-        path: join(process.cwd(), 'libs/interface/src/lib/graphql.ts')
+        path: join(process.cwd(), 'libs/interface/src/lib/graphql.ts'),
+        outputAs: 'class',
       },
       debug: true,
       playground: true

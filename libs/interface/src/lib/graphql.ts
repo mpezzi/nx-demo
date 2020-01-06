@@ -5,7 +5,7 @@
  */
 
 /* tslint:disable */
-export interface Album {
+export class Album {
     id: string;
     title?: string;
     userId: string;
@@ -13,7 +13,7 @@ export interface Album {
     photos?: Photo[];
 }
 
-export interface Comment {
+export class Comment {
     id: string;
     name?: string;
     email?: string;
@@ -22,7 +22,7 @@ export interface Comment {
     post?: Post;
 }
 
-export interface Photo {
+export class Photo {
     id: string;
     title?: string;
     url?: string;
@@ -31,7 +31,7 @@ export interface Photo {
     album?: Album;
 }
 
-export interface Post {
+export class Post {
     id: string;
     title?: string;
     body?: string;
@@ -39,22 +39,33 @@ export interface Post {
     user?: User;
 }
 
-export interface IQuery {
-    getAlbums(): Album[] | Promise<Album[]>;
-    getAlbumById(albumId: string): Album | Promise<Album>;
-    getComments(): Comment[] | Promise<Comment[]>;
-    getCommentById(commentId: string): Comment | Promise<Comment>;
-    getPhotos(): Photo[] | Promise<Photo[]>;
-    getPhotoById(photoId: string): Photo | Promise<Photo>;
-    getPosts(): Post[] | Promise<Post[]>;
-    getPostById(postId: string): Post | Promise<Post>;
-    getTodos(): Todo[] | Promise<Todo[]>;
-    getTodoById(todoId: string): Todo | Promise<Todo>;
-    getUsers(): User[] | Promise<User[]>;
-    getUserById(userId: string): User | Promise<User>;
+export abstract class IQuery {
+    abstract getAlbums(): Album[] | Promise<Album[]>;
+
+    abstract getAlbumById(albumId: string): Album | Promise<Album>;
+
+    abstract getComments(): Comment[] | Promise<Comment[]>;
+
+    abstract getCommentById(commentId: string): Comment | Promise<Comment>;
+
+    abstract getPhotos(): Photo[] | Promise<Photo[]>;
+
+    abstract getPhotoById(photoId: string): Photo | Promise<Photo>;
+
+    abstract getPosts(): Post[] | Promise<Post[]>;
+
+    abstract getPostById(postId: string): Post | Promise<Post>;
+
+    abstract getTodos(): Todo[] | Promise<Todo[]>;
+
+    abstract getTodoById(todoId: string): Todo | Promise<Todo>;
+
+    abstract getUsers(): User[] | Promise<User[]>;
+
+    abstract getUserById(userId: string): User | Promise<User>;
 }
 
-export interface Todo {
+export class Todo {
     id: string;
     title?: string;
     completed?: boolean;
@@ -62,7 +73,7 @@ export interface Todo {
     user?: User;
 }
 
-export interface User {
+export class User {
     id: string;
     name?: string;
     username?: string;
@@ -75,7 +86,7 @@ export interface User {
     todos?: Todo[];
 }
 
-export interface UserAddress {
+export class UserAddress {
     street?: string;
     suite?: string;
     city?: string;
@@ -83,12 +94,12 @@ export interface UserAddress {
     geo?: UserAddressGeo;
 }
 
-export interface UserAddressGeo {
+export class UserAddressGeo {
     lat?: string;
     lng?: string;
 }
 
-export interface UserCompany {
+export class UserCompany {
     name?: string;
     catchPhrase?: string;
     bs?: string;
