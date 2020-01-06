@@ -11,7 +11,7 @@ import { resolvers } from './resolvers';
     HttpModule,
     NestGraphQLModule.forRoot({
       include: [GraphQLModule],
-      typePaths: ['./**/graphql.graphql'],
+      typePaths: ['./**/*.graphql'],
       definitions: {
         path: join(process.cwd(), 'libs/interface/src/lib/graphql.ts')
       },

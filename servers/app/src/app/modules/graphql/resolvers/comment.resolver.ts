@@ -1,7 +1,7 @@
 import { Args, Parent, Query, ResolveProperty, Resolver } from "@nestjs/graphql";
 import { Comment, Post } from '@nx-demo/interface';
 
-import { CommentFinder, PostFinder, UserFinder } from '../finders';
+import { CommentFinder, PostFinder } from '../finders';
 
 @Resolver('Comment')
 export class CommentResolver {
@@ -12,7 +12,6 @@ export class CommentResolver {
   public constructor(
     private readonly commentFinder: CommentFinder,
     private readonly postFinder: PostFinder,
-    private readonly userFinder: UserFinder,
   ) { }
 
   /**

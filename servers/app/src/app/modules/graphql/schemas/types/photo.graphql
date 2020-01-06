@@ -1,0 +1,8 @@
+type Photo {
+  id: ID!
+  title: String
+  url: String
+  thumbnailUrl: String
+  albumId: ID!
+  album: Album
+}

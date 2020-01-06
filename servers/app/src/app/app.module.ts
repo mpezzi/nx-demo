@@ -16,19 +16,20 @@ import { GraphQLModule } from './modules/graphql';
 export class AppModule implements NestModule {
 
   /**
-   * Apply middleware.
+   * Apply express middleware.
    */
   public configure(consumer: MiddlewareConsumer): void {
 
-    const spas = [
+    const apps = [
       'apple',
       'orange',
       'pear',
     ];
 
-    spas.forEach(a => consumer
-      .apply(express.static(join(process.cwd(), `dist/apps/${a}`)))
-      .forRoutes(a)
+    // Expose each application as static sub folder.
+    apps.forEach(app => consumer
+      .apply(express.static(join(process.cwd(), `dist/apps/${app}`)))
+      .forRoutes(app)
     );
 
   }

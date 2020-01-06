@@ -1,0 +1,14 @@
+type Query {
+  getAlbums: [Album]
+  getAlbumById(albumId: ID!): Album
+  getComments: [Comment]
+  getCommentById(commentId: ID!): Comment
+  getPhotos: [Photo]
+  getPhotoById(photoId: ID!): Photo
+  getPosts: [Post]
+  getPostById(postId: ID!): Post
+  getTodos: [Todo]
+  getTodoById(todoId: ID!): Todo
+  getUsers: [User]
+  getUserById(userId: ID!): User
+}
